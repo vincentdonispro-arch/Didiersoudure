@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SARL Didier & Didier Soudure — Tuyauterie industrielle, Acier & Inox</title>
+  <meta name="description" content="SARL Didier & Didier Soudure — Tuyauterie industrielle : acier & inox. Chantiers en Nouvelle‑Aquitaine, préfabrication pour la France entière. Devis rapide au 06 46 12 02 55." />
+  <meta name="theme-color" content="#1f2329" />
+
+  <!-- Open Graph / SEO de base -->
+  <meta property="og:title" content="SARL Didier & Didier Soudure" />
+  <meta property="og:description" content="Tuyauterie industrielle — Acier & Inox. Chantiers en Nouvelle‑Aquitaine, préfabrication France entière." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0f1115;          /* fond principal (noir bleuté) */
+      --panel:#151922;       /* panneaux */
+      --muted:#aab3c0;       /* texte secondaire */
+      --text:#e9eef6;        /* texte principal */
+      --accent:#d23a3a;      /* rouge acier */
+      --accent-2:#ff6b6b;    /* rouge clair pour hover */
+      --line:#2a3140;        /* traits subtils */
+      --ok:#3fbf7f;          /* vert succès */
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--text);text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1200px;margin-inline:auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--bg) 92%, black 8%);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.4px}
+    .brand svg{width:28px;height:28px}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{padding:8px 10px;border-radius:10px}
+    nav a:hover{background:var(--panel)}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);padding:10px 16px;border-radius:12px;font-weight:600}
+    .cta:hover{background:var(--accent-2)}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+    .hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(1200px 500px at 20% -10%, color-mix(in oklab, var(--accent) 35%, transparent), transparent), radial-gradient(900px 450px at 120% 10%, color-mix(in oklab, var(--accent) 20%, transparent), transparent)}
+    .hero-inner{position:relative}
+    .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;padding:64px 0}
+    .eyebrow{color:var(--muted);text-transform:uppercase;font-size:.9rem;letter-spacing:.18em}
+    h1{margin:.2em 0 .4em;font-size:clamp(28px,5vw,44px);line-height:1.15}
+    .lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted)}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .badge{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:.9rem;background:color-mix(in oklab, var(--panel) 70%, black 30%)}
+    .hero-card{background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 90%, black 10%), color-mix(in oklab, var(--panel) 70%, black 30%));border:1px solid var(--line);border-radius:18px;padding:18px}
+    .hero-card h3{margin:4px 0 8px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--panel);font-weight:600}
+    .btn:hover{border-color:var(--accent)}
+
+    /* Sections */
+    section{padding:48px 0;border-bottom:1px solid var(--line)}
+    .section-title{display:flex;align-items:center;gap:10px;margin:0 0 18px}
+    .section-title svg{width:22px;height:22px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .kpis .k{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+    .k .n{font-size:22px;font-weight:700}
+
+    /* Cards grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+    .card h3{margin:2px 0 8px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .ph{aspect-ratio:4/3;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;color:var(--muted);background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0))}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .list{display:grid;gap:8px}
+    .line{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+    .mapph{height:220px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);background:repeating-linear-gradient(45deg, #171b22, #171b22 10px, #131720 10px, #131720 20px)}
+
+    /* Footer */
+    footer{padding:18px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns:1fr;gap:18px;padding:40px 0}
+      .cards{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .contact{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- En‑tête -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <!-- Logo minimal SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 18h16M4 6h16M6 6l4 12M18 6l-4 12"/>
+        </svg>
+        <span>SARL Didier & Didier Soudure</span>
+      </div>
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#zones">Zones</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#contact" class="cta">Devis : 06 46 12 02 55</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil" aria-label="Présentation">
+    <div class="container hero-inner">
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Tuyauterie industrielle — Acier & Inox</p>
+          <h1>Préfabrication & chantiers fiables, réactifs, au service de vos installations.</h1>
+          <p class="lead">Chantiers en <strong>Nouvelle‑Aquitaine</strong>, préfabrication pour la <strong>France entière</strong>. Soudures maîtrisées, délais tenus, sécurité prioritaire.</p>
+          <div class="badges" aria-label="Points forts">
+            <span class="badge">Acier</span>
+            <span class="badge">Inox</span>
+            <span class="badge">Préfabrication atelier</span>
+            <span class="badge">Intervention chantier</span>
+          </div>
+          <div class="hero-cta">
+            <a class="cta" href="tel:+33646120255" aria-label="Appeler pour un devis">Appeler le 06&nbsp;46&nbsp;12&nbsp;02&nbsp;55</a>
+            <a class="btn" href="#contact">Demander un devis</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Zones d'intervention">
+          <h3>Zones d’intervention</h3>
+          <ul>
+            <li><strong>Chantiers :</strong> Nouvelle‑Aquitaine</li>
+            <li><strong>Préfabrication :</strong> France entière (expédition)</li>
+          </ul>
+          <div class="kpis">
+            <div class="k"><div class="n">Acier</div><div>Réseaux, supports, brides</div></div>
+            <div class="k"><div class="n">Inox</div><div>Process, alimentaire, chimie</div></div>
+            <div class="k"><div class="n">Soudure</div><div>TIG / MIG / ARC</div></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="t-services">
+    <div class="container">
+      <h2 class="section-title" id="t-services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M5 7l3 12h8l3-12M7 7l2 12M17 7l-2 12M9 11h6"/></svg>
+        <span>Services</span>
+      </h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Tuyauterie industrielle</h3>
+          <p>Étude, préfabrication atelier, montage sur site. Lecture de plans isométriques, essais d’étanchéité.</p>
+        </article>
+        <article class="card">
+          <h3>Soudures Acier & Inox</h3>
+          <p>Procédés TIG / MIG / ARC selon matériaux et épaisseurs. Finitions propres, contrôle visuel et ressuage sur demande.</p>
+        </article>
+        <article class="card">
+          <h3>Maintenance & Modifications</h3>
+          <p>Interventions rapides sur arrêts techniques, reprises, adaptateurs, brides, supports, mise en conformité.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zones -->
+  <section id="zones" aria-labelledby="t-zones">
+    <div class="container">
+      <h2 class="section-title" id="t-zones">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Zones d’intervention</span>
+      </h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Chantiers — Nouvelle‑Aquitaine</h3>
+          <p>Déplacements sur sites industriels : montage, modifications, maintenance.</p>
+        </article>
+        <article class="card">
+          <h3>Préfabrication — France entière</h3>
+          <p>Élément de tuyauterie fabriqué en atelier et expédié partout en France.</p>
+        </article>
+        <article class="card">
+          <h3>Qualité & Sécurité</h3>
+          <p>Traçabilité des matériaux sur demande, EPI, consignations, intervention en règle avec vos procédures HSE.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réalisations -->
+  <section id="realisations" aria-labelledby="t-realisations">
+    <div class="container">
+      <h2 class="section-title" id="t-realisations">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Quelques réalisations</span>
+      </h2>
+      <div class="gallery" aria-label="Galerie photos">
+        <div class="ph">Photo 1</div>
+        <div class="ph">Photo 2</div>
+        <div class="ph">Photo 3</div>
+        <div class="ph">Photo 4</div>
+        <div class="ph">Photo 5</div>
+        <div class="ph">Photo 6</div>
+      </div>
+      <p class="lead" style="margin-top:12px">Envoyez vos photos et je les intègre ici (format paysage, 1200px recommandé).</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="t-contact">
+    <div class="container">
+      <h2 class="section-title" id="t-contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v1a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 0h1a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L6 7a16 16 0 0 0 7 7l.54-1.29a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92Z"/></svg>
+        <span>Contact & Devis</span>
+      </h2>
+
+      <div class="contact">
+        <div class="list" role="list">
+          <div class="line" role="listitem">
+            <strong>Téléphone</strong>
+            <a class="btn" href="tel:+33646120255" aria-label="Appeler">06&nbsp;46&nbsp;12&nbsp;02&nbsp;55</a>
+          </div>
+          <div class="line" role="listitem">
+            <strong>Email</strong>
+            <a class="btn" href="mailto:didier-didiersoudure@laposte.net" aria-label="Envoyer un e‑mail">didier-didiersoudure@laposte.net</a>
+          </div>
+          <div class="line" role="listitem">
+            <strong>Adresse</strong>
+            <span>5 impasse sauvignon — 33240</span>
+          </div>
+          <div class="line" role="listitem">
+            <strong>Zones</strong>
+            <span>Chantiers : Nouvelle‑Aquitaine • Préfabrication : France entière</span>
+          </div>
+        </div>
+        <div class="mapph" aria-hidden="true">Carte / plan (optionnel)</div>
+      </div>
+
+      <div class="hero-cta" style="margin-top:16px">
+        <a class="cta" href="mailto:didier-didiersoudure@laposte.net?subject=Demande%20de%20devis%20–%20Tuyauterie%20industrielle&body=Bonjour%20Didier%20%26%20Didier%2C%0A%0AMon%20besoin%20:%20...%0ALieu%20:%20...%0AD%C3%A9lai%20:%20...%0AMati%C3%A8re%20:%20Acier%20/%20Inox%0A%0AMerci%2C">Demander un devis par e‑mail</a>
+        <a class="btn" href="tel:+33646120255">Appeler maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <small>© <span id="y"></span> SARL Didier & Didier Soudure — Tous droits réservés</small>
+      <small><a href="#accueil">Haut de page</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // Année auto dans le footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
